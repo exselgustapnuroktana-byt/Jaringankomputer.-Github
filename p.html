@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Lengkap: Jaringan Komputer dan Internet</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mengatur font default menjadi Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Warna latar belakang sangat terang */
+            color: #1f2937; /* Warna teks gelap */
+        }
+        /* Styling untuk konten utama */
+        .content-container {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Custom list style */
+        .custom-list li::before {
+            content: '•';
+            color: #0d9488; /* Teal color for bullet points */
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        .custom-list {
+            list-style: none;
+            padding-left: 1em;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-teal': '#0d9488',
+                        'secondary-blue': '#1e3a8a',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-primary-teal text-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto p-4 flex justify-center items-center">
+            <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">Jaringan Komputer & Internet</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Introduction Section -->
+        <section id="pendahuluan" class="bg-white rounded-lg p-6 mb-8 content-container border-t-4 border-secondary-blue">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">I. Pendahuluan</h2>
+
+            <!-- A. Pengertian Jaringan Komputer -->
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-primary-teal">A. Pengertian Jaringan Komputer</h3>
+            <p class="text-gray-700 leading-relaxed">Jaringan komputer adalah kumpulan dari dua atau lebih perangkat komputasi (seperti komputer, server, printer, atau perangkat mobile) yang saling terhubung satu sama lain untuk tujuan berbagi sumber daya (seperti file, printer, dan koneksi internet) dan berkomunikasi.</p>
+
+            <!-- B. Pengertian Internet -->
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-primary-teal">B. Pengertian Internet</h3>
+            <p class="text-gray-700 leading-relaxed">Internet (Interconnected Network) adalah sistem jaringan komputer global yang menghubungkan miliaran perangkat di seluruh dunia menggunakan standar protokol komunikasi, yaitu Transmission Control Protocol/Internet Protocol (TCP/IP). Internet adalah contoh paling besar dan kompleks dari sebuah Wide Area Network (WAN).</p>
+        </section>
+
+        <!-- Konsep Dasar Jaringan Section -->
+        <section id="konsep-dasar" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">II. Konsep Dasar Jaringan</h2>
+
+            <!-- A. Jenis-jenis Jaringan Berdasarkan Area -->
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-primary-teal">A. Jenis-jenis Jaringan Berdasarkan Area</h3>
+            <div class="overflow-x-auto shadow-md rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-primary-teal text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Jenis Jaringan</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Cakupan Area</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">LAN (Local Area Network)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Area kecil (kantor, rumah, sekolah)</td>
+                            <td class="px-6 py-4 whitespace-normal">Menghubungkan perangkat dalam area geografis terbatas.</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">MAN (Metropolitan Area Network)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Area kota atau kampus besar</td>
+                            <td class="px-6 py-4 whitespace-normal">Menghubungkan beberapa LAN dalam jarak menengah.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">WAN (Wide Area Network)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Area luas (antar kota, negara, benua)</td>
+                            <td class="px-6 py-4 whitespace-normal">Menggunakan koneksi publik (seperti internet) atau privat yang jauh.</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">PAN (Personal Area Network)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Area sangat kecil (sekitar 10 meter)</td>
+                            <td class="px-6 py-4 whitespace-normal">Menghubungkan perangkat pribadi (misalnya, Bluetooth).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- B. Topologi Jaringan -->
+            <h3 class="text-xl font-semibold mt-6 mb-3 text-primary-teal">B. Topologi Jaringan</h3>
+            <p class="text-gray-700 mb-4">Topologi menggambarkan tata letak fisik atau logis dari perangkat dan kabel dalam suatu jaringan.</p>
+            <ul class="space-y-3 custom-list text-gray-700">
+                <li><strong>Topologi Bus:</strong> Semua perangkat terhubung ke satu kabel tunggal (backbone). Sederhana, tetapi sulit untuk mendeteksi kerusakan.</li>
+                <li><strong>Topologi Star (Bintang):</strong> Semua perangkat terhubung ke satu titik pusat (Hub/Switch). Mudah dikelola, tetapi jika pusat rusak, seluruh jaringan lumpuh. [attachment_0](attachment)</li>
+                <li><strong>Topologi Ring (Cincin):</strong> Setiap perangkat terhubung ke dua perangkat lainnya, membentuk jalur melingkar.</li>
+                <li><strong>Topologi Mesh (Jala):</strong> Setiap perangkat terhubung ke setiap perangkat lain. Sangat andal (redundansi tinggi), tetapi mahal dan kompleks.</li>
+            </ul>
+        </section>
+
+        <!-- Model Jaringan Section -->
+        <section id="model-jaringan" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">III. Model Jaringan (Model OSI dan TCP/IP)</h2>
+            <p class="text-gray-700 mb-4">Model jaringan mendefinisikan standar cara komunikasi data dilakukan antar perangkat.</p>
+
+            <!-- A. Model OSI -->
+            <h3 class="text-xl font-semibold mt-4 mb-3 text-primary-teal">A. Model OSI (Open Systems Interconnection)</h3>
+            <p class="text-gray-700 mb-3">Model konseptual yang terdiri dari tujuh lapisan (layer), mendefinisikan fungsi komunikasi jaringan secara terpisah. [attachment_1](attachment)</p>
+            <ol class="list-decimal list-inside space-y-2 ml-4 text-gray-700">
+                <li><strong>Lapisan 7: Application (Aplikasi)</strong>: Antarmuka pengguna (e.g., HTTP, SMTP).</li>
+                <li><strong>Lapisan 6: Presentation (Presentasi)</strong>: Format data, enkripsi, kompresi.</li>
+                <li><strong>Lapisan 5: Session (Sesi)</strong>: Mengelola sesi koneksi antar aplikasi.</li>
+                <li><strong>Lapisan 4: Transport (Transportasi)</strong>: Segmentasi, koneksi *end-to-end* (TCP/UDP).</li>
+                <li><strong>Lapisan 3: Network (Jaringan)</strong>: Pengalamatan logis (IP), *routing*.</li>
+                <li><strong>Lapisan 2: Data Link (Tautan Data)</strong>: Pengalamatan fisik (MAC), kontrol akses media.</li>
+                <li><strong>Lapisan 1: Physical (Fisik)</strong>: Media transmisi (kabel, sinyal, bit).</li>
+            </ol>
+
+            <!-- B. Model TCP/IP -->
+            <h3 class="text-xl font-semibold mt-6 mb-3 text-primary-teal">B. Model TCP/IP</h3>
+            <p class="text-gray-700 mb-3">Model yang digunakan secara praktis di internet, terdiri dari empat lapisan yang disederhanakan.</p>
+            <ul class="space-y-2 custom-list text-gray-700">
+                <li><strong>Lapisan Aplikasi:</strong> (Gabungan L7, L6, L5 OSI) Protokol aplikasi.</li>
+                <li><strong>Lapisan Transport:</strong> (Sama dengan L4 OSI) TCP dan UDP.</li>
+                <li><strong>Lapisan Internet:</strong> (Sama dengan L3 OSI) IP, ARP, ICMP.</li>
+                <li><strong>Lapisan Akses Jaringan:</strong> (Gabungan L2, L1 OSI) Media fisik dan *framing*.</li>
+            </ul>
+        </section>
+
+        <!-- Protokol Inti Internet Section -->
+        <section id="protokol-inti" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">IV. Protokol Inti Internet</h2>
+            <p class="text-gray-700 mb-4">Protokol adalah seperangkat aturan yang mengatur bagaimana data ditransfer.</p>
+            <ol class="list-decimal list-inside space-y-3 ml-4 text-gray-700">
+                <li><strong>IP (Internet Protocol):</strong> Bertanggung jawab untuk pengalamatan (*addressing*) dan *routing* paket data. Setiap perangkat di internet memiliki Alamat IP unik.</li>
+                <li><strong>TCP (Transmission Control Protocol):</strong> Protokol berorientasi koneksi yang menjamin pengiriman paket data yang andal dan berurutan.</li>
+                <li><strong>UDP (User Datagram Protocol):</strong> Protokol tanpa koneksi yang cepat dan efisien, cocok untuk data yang toleran terhadap kehilangan paket (misalnya, *streaming* video).</li>
+                <li><strong>HTTP (HyperText Transfer Protocol):</strong> Protokol dasar untuk transfer data di World Wide Web (WWW).</li>
+                <li><strong>DNS (Domain Name System):</strong> Menerjemahkan nama domain yang mudah diingat (misalnya, <code>google.com</code>) menjadi Alamat IP yang digunakan oleh komputer.</li>
+            </ol>
+        </section>
+
+        <!-- Perangkat Jaringan Section -->
+        <section id="perangkat-jaringan" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">V. Perangkat Jaringan</h2>
+
+            <div class="overflow-x-auto shadow-md rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-secondary-blue text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Perangkat</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Fungsi Utama</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Lapisan OSI/TCP-IP</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900"><strong>Hub</strong></td>
+                            <td class="px-6 py-4 whitespace-normal">Mengirimkan data ke semua port (tidak cerdas).</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Fisik (L1)</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900"><strong>Switch</strong></td>
+                            <td class="px-6 py-4 whitespace-normal">Mengirimkan data ke port tujuan spesifik (cerdas).</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Tautan Data (L2)</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900"><strong>Router</strong></td>
+                            <td class="px-6 py-4 whitespace-normal">Menghubungkan dua atau lebih jaringan berbeda dan menentukan jalur terbaik (routing).</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Jaringan (L3) / Internet</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900"><strong>Modem</strong></td>
+                            <td class="px-6 py-4 whitespace-normal">Mengubah sinyal digital menjadi analog (modulasi) dan sebaliknya (demodulasi).</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Fisik (L1)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Cara Kerja Internet Section -->
+        <section id="cara-kerja" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">VI. Cara Kerja Internet dan World Wide Web (WWW)</h2>
+
+            <!-- A. Alamat IP dan Paket Data -->
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-primary-teal">A. Alamat IP dan Paket Data</h3>
+            <p class="text-gray-700 leading-relaxed mb-3">Data yang dikirim melalui internet dipecah menjadi unit-unit kecil yang disebut <strong>paket</strong>. Setiap paket berisi:</p>
+            <ul class="space-y-1 ml-6 list-disc text-gray-700">
+                <li>Data yang sebenarnya.</li>
+                <li>Header (informasi pengirim, penerima, dan urutan paket).</li>
+            </ul>
+
+            <!-- B. Proses Routing -->
+            <h3 class="text-xl font-semibold mt-4 mb-2 text-primary-teal">B. Proses Routing</h3>
+            <p class="text-gray-700 leading-relaxed">Ketika Anda mengirim data:</p>
+            <ol class="list-decimal list-inside space-y-2 ml-4 text-gray-700">
+                <li>Perangkat Anda memberikan paket tersebut ke <strong>Router</strong> lokal Anda.</li>
+                <li>Router membaca Alamat IP tujuan pada header paket.</li>
+                <li>Router menggunakan <strong>Tabel Routing</strong> untuk memutuskan router mana yang harus menerima paket selanjutnya.</li>
+                <li>Proses ini berlanjut dari router ke router di seluruh dunia hingga paket mencapai tujuan akhirnya (server).</li>
+            </ol>
+
+            <!-- C. World Wide Web (WWW) -->
+            <h3 class="text-xl font-semibold mt-6 mb-2 text-primary-teal">C. World Wide Web (WWW)</h3>
+            <p class="text-gray-700 leading-relaxed mb-3">WWW adalah kumpulan dokumen yang saling terhubung dan sumber daya lain yang diakses melalui internet menggunakan HTTP.</p>
+            <p class="font-semibold text-gray-800">Komponen Utama WWW:</p>
+            <ul class="space-y-1 ml-6 list-disc text-gray-700">
+                <li><strong>Klien (Browser):</strong> Perangkat lunak (Chrome, Firefox) yang meminta dan menampilkan halaman web.</li>
+                <li><strong>Server Web:</strong> Komputer yang menyimpan file web dan merespons permintaan klien.</li>
+                <li><strong>URL (Uniform Resource Locator):</strong> Alamat unik untuk sumber daya di web (misalnya, <code>https://www.google.com/</code>).</li>
+            </ul>
+        </section>
+
+        <!-- Keamanan Jaringan Dasar Section -->
+        <section id="keamanan-jaringan" class="bg-white rounded-lg p-6 mb-8 content-container">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-blue border-b pb-2">VII. Keamanan Jaringan Dasar</h2>
+            <p class="text-gray-700 mb-4">Keamanan adalah aspek penting karena jaringan, terutama internet, sangat terbuka.</p>
+            <ul class="space-y-3 custom-list text-gray-700">
+                <li><strong>Firewall:</strong> Sistem keamanan jaringan yang memonitor dan mengontrol lalu lintas jaringan yang masuk dan keluar berdasarkan aturan keamanan yang telah ditetapkan.</li>
+                <li><strong>Enkripsi:</strong> Proses mengubah data menjadi kode rahasia (*ciphertext*) untuk mencegah akses tidak sah. Data hanya dapat dibaca setelah didekripsi.</li>
+                <li><strong>VPN (Virtual Private Network):</strong> Membuat koneksi aman dan terenkripsi di atas jaringan yang kurang aman (seperti internet), memungkinkan pengguna mengakses jaringan pribadi dari jarak jauh.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 mt-8">
+        <div class="max-w-4xl mx-auto text-center text-sm">
+            Materi ini disusun sebagai pengantar lengkap Jaringan Komputer dan Internet.
+        </div>
+    </footer>
+
+</body>
+</html>
